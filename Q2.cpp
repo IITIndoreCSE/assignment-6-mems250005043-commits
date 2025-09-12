@@ -8,7 +8,48 @@
 
 
 
+// Online C++ compiler to run C++ program online
+#include <iostream>
+int m,n;
+void join(char a1[], char a2[])
+{
+ int i=0,j =0;
+while (i < m)   
+{
+    std::cout <<a1[i]<<", ";
+    i++;
+    
+}
+    while (j < n) {
+        if (j == n-1 )
+        {std::cout <<a2[j];}
+        else 
+        {std::cout <<a2[j]<<", ";}
+        j++;
+    }
 
+}
+int main() 
+{
+  
+  std::cout<<"Length of Array1: ";
+  std::cin>>m;
+  std::cout<<"Length of Array2: ";
+  std::cin>>n;
+    
+    char array1[m];
+    char array2[n];
+    std::cout<<"Array1 : ";
+    std::cin>>array1;
+    std::cout<<"Array2 : ";
+    std::cin>>array2;
+    std::cout<<" Joined Array is : [ ";
+    
+    join(array1, array2);
+    std::cout<<" ] ";
+    
+    return 0;
+}
 
 
 
