@@ -3,7 +3,26 @@
 
 
 
+// Online C++ compiler to run C++ program online
+#include <iostream>
 
+int main() {
+    // Write C++ code here
+    std::cout<<"INPUT: ";
+    int n;
+    std::cin>>n;
+    int i = 1;
+    int sum=0;
+    
+    while (i <= n)
+     {sum = sum + i;
+         i++;
+     }
+     std::cout<<"Sum : "<<sum;
+     
+
+    return 0;
+}
 
 
 
