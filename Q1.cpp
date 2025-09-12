@@ -1,7 +1,37 @@
 //  Write a program in C++ with a function called add to add two complex numbers and another function called subtract to subtract one complex number from another. 
 
 
+// Online C++ compiler to run C++ program online
+#include <iostream>
+void add (char arr1[6], char arr2[6]){
+    int realascii1 = arr1[0];
+    int realascii2 = arr2[0];
+    int imagascii1 = arr1[4];
+    int imagascii2 = arr2[4];
+    
+    int real1 = realascii1 - '0';
+    int real2 = realascii2 - '0';
+    int imag1 = imagascii1 - '0';
+    int imag2 = imagascii2 - '0';
+    int realsum = real1 + real2;
+    int imagsum = real1 + real2;
+    std::cout <<"Sum: "<<realsum<<" + "<<imagsum<<"i";
 
+}
+int main() {
+    // Write C++ code here
+    char complex1[6];
+    char complex2[6];
+    std::cout<<"Complex Number 1: ";
+     std::cin>>complex1;
+      std::cout<<"Complex Number 2: ";
+     std::cin>>complex2;
+    add (complex1, complex2);
+    
+    
+
+    return 0;
+}
 
 
 
