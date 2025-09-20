@@ -1,28 +1,42 @@
-// Write a program to populate a character array with letters of the alphabet at random; subsequently the letters in the array should be arranged alphabetically (without using the sort function).
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
 
+int main() {
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
 
+    char arr[n];
+    srand(time(0));
+    for (int i = 0; i < n; i++) {
+        arr[i] = 'a' + rand() % 26;
+    }
 
+    cout << "Random letters: [";
+    for (int i = 0; i < n; i++) {
+        cout << "'" << arr[i] << "'";
+        if (i != n - 1) cout << ", ";
+    }
+    cout << "]" << endl;
 
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[i]) {
+                char temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
 
+    cout << "Sorted letters: [";
+    for (int i = 0; i < n; i++) {
+        cout << "'" << arr[i] << "'";
+        if (i != n - 1) cout << ", ";
+    }
+    cout << "]" << endl;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Test Case 1
-Input:
-Random letters: ['m', 'g', 'x', 'a', 'p', 'b', 'f', 'q', 't', 'd']
-Output:
-Sorted letters: ['a', 'b', 'd', 'f', 'g', 'm', 'p', 'q', 't', 'x'] */
+    return 0;
+}
